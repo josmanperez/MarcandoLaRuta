@@ -90,6 +90,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         pin.title = ("Lat: ~ \(Double(round(latitude*100/100))), Long: ~ \(Double(round(longitude*100/100)))")
         if let punto = origen {
           pin.subtitle = "\(Double(round(manager.location!.distanceFromLocation(punto)*100)/100)) metros del origen"
+        } else {
+          print("no hay origen")
         }
         
         self.mapa.addAnnotation(pin)
